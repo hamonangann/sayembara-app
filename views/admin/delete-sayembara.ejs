@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <main>
+        <form action="/admin/delete" method="POST">
+            <div>
+                <label for="title">Post Password (write current password):</label>
+                <input type="password" name="password" id="password" value="">
+            </div>
+            <input type="hidden" value="<%= sayembaraId %>" name="id">
+
+            <button class="btn" type="submit">Delete</button>
+        </form>
+    </main>
+</body>
+</html>

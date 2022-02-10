@@ -1,0 +1,35 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <main>
+            <% if (prods.length > 0) { %>
+                <div>
+                    <% for (let sayembara of prods) { %>
+                        <article>
+                            <header>
+                                <h1>
+                                    <%= sayembara.title %>
+                                </h1>
+                            </header>
+                            <div>
+                                <p>
+                                    <%= sayembara.content %>
+                                </p>
+                            </div>
+                            <div>
+                                <a href="/admin/update/<%= sayembara.id %>?edit=true">Edit</a>
+                                <a href="/admin/delete/<%= sayembara.id %>">Delete</a>
+                            </div>
+                        </article>
+                        <% } %>
+                </div>
+            <% } else { %>
+                <h1>Belum ada pengumuman...!</h1>
+                
+            <% } %>
+            <br>
+            <a href="/admin/post">Buat pengumuman baru</a>
+        </main>
+    </body>
+</html>

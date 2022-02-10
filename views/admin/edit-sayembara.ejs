@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <main>
+        <form action="/admin/<% if (editing) { %>update<% } else { %>post<% } %>" method="POST">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<% if (editing) { %><%= sayembaraTitle %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="content">Description</label>
+                <textarea name="content" id="content" rows="5"><% if (editing) { %><%= sayembaraContent %><% } %></textarea>
+            </div>
+            <div>
+                <label for="title">Post Password (write current password):</label>
+                <input type="password" name="password" id="password" value="">
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= sayembaraId %>" name="id">
+            <% } %>
+
+            <button class="btn" type="submit"><% if (editing) { %>Update Pengumuman<% } else { %>Add Pengumuman<% } %></button>
+        </form>
+    </main>
+</body>
+</html>

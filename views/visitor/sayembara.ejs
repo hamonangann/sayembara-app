@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <main>
+            <% if (prods.length > 0) { %>
+                <div>
+                    <% for (let sayembara of prods) { %>
+                        <article>
+                            <header>
+                                <h1>
+                                    <%= sayembara.title %>
+                                </h1>
+                            </header>
+                            <div>
+                                <p>
+                                    <%= sayembara.content %>
+                                </p>
+                            </div>
+                        </article>
+                        <% } %>
+                </div>
+            <% } else { %>
+                <h1>Belum ada pengumuman...!</h1>
+            <% } %>
+
+        </main>
+    </body>
+</html>
